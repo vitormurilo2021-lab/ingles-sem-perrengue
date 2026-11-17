@@ -1,0 +1,4 @@
+Coloque aqui os áudios do Teste do Ouvido (voz nativa, velocidade normal):
+  hotel.mp3       -> "Hi there! Do you have a reservation with us? Great. I'll just need a card for incidentals, and breakfast is from seven to ten."
+  lanchonete.mp3  -> "Okay, one cheeseburger combo. Would you like that for here or to go?"
+O quiz toca em 1x e reduz para 0.8x / 0.6x sem distorcer a voz. Sem os arquivos, usa a voz do navegador.

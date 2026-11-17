@@ -1,0 +1,28 @@
+@font-face{font-family:Caveat;font-weight:500;font-display:swap;src:url(/assets/fonts/caveat-latin-500-normal.woff2) format("woff2")}
+@font-face{font-family:Caveat;font-weight:700;font-display:swap;src:url(/assets/fonts/caveat-latin-700-normal.woff2) format("woff2")}
+@font-face{font-family:Kalam;font-weight:700;font-display:swap;src:url(/assets/fonts/kalam-latin-700-normal.woff2) format("woff2")}
+@font-face{font-family:Bricolage;font-weight:600;font-display:swap;src:url(/assets/fonts/bricolage-grotesque-latin-600-normal.woff2) format("woff2")}
+@font-face{font-family:Bricolage;font-weight:800;font-display:swap;src:url(/assets/fonts/bricolage-grotesque-latin-800-normal.woff2) format("woff2")}
+@font-face{font-family:DMSerif;font-weight:400;font-display:swap;src:url(/assets/fonts/dm-serif-display-latin-400-normal.woff2) format("woff2")}
+@font-face{font-family:Inter;font-weight:400;font-display:swap;src:url(/assets/fonts/inter-latin-400-normal.woff2) format("woff2")}
+@font-face{font-family:Inter;font-weight:500;font-display:swap;src:url(/assets/fonts/inter-latin-500-normal.woff2) format("woff2")}
+@font-face{font-family:Inter;font-weight:600;font-display:swap;src:url(/assets/fonts/inter-latin-600-normal.woff2) format("woff2")}
+@font-face{font-family:Inter;font-weight:700;font-display:swap;src:url(/assets/fonts/inter-latin-700-normal.woff2) format("woff2")}
+@font-face{font-family:Inter;font-weight:800;font-display:swap;src:url(/assets/fonts/inter-latin-800-normal.woff2) format("woff2")}
+:root{--ink:#1B2A4A;--ink-2:#4A5878;--paper:#FFFDF6;--hl:#FFE45C;--pink:#FFB3C7;--blue:#A5D8FF;--cta:#C2410C;--cta-shadow:#7C2D12;--wine:#7A1F2B;--green:#1F7A45}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;font-family:Inter,system-ui,-apple-system,sans-serif;color:var(--ink);line-height:1.5}
+img{max-width:100%;height:auto;display:block}
+button{font:inherit}
+a{color:inherit}
+.note{font-family:Caveat,cursive}
+.hl{background:linear-gradient(104deg,transparent 0 1%,var(--hl) 2% 97%,transparent 99%);background-size:100% 58%;background-position:0 88%;background-repeat:no-repeat;padding:0 .15em}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:56px;padding:16px 28px;border:0;border-radius:14px;background:var(--cta);color:#fff;font-weight:800;font-size:18px;letter-spacing:.2px;text-decoration:none;cursor:pointer;box-shadow:0 5px 0 var(--cta-shadow);transition:transform .08s ease,box-shadow .08s ease;text-align:center}
+.btn:active{transform:translateY(3px);box-shadow:0 2px 0 var(--cta-shadow)}
+.btn:focus-visible,button:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid #1D4ED8;outline-offset:3px}
+@keyframes pulse{0%{box-shadow:0 5px 0 var(--cta-shadow),0 0 0 0 rgba(194,65,12,.45)}100%{box-shadow:0 5px 0 var(--cta-shadow),0 0 0 16px rgba(194,65,12,0)}}
+.pulse{animation:pulse 1.6s ease-out infinite}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
+[tabindex="-1"]:focus{outline:none}
