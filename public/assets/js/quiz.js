@@ -23,8 +23,8 @@
 
   // Áudios: coloque hotel.mp3 e lanchonete.mp3 em /assets/audio/. Sem os arquivos, usa a voz do navegador.
   var AUDIO = {
-    hotel: { src: '/assets/audio/hotel.mp3', text: "Hi there! Do you have a reservation with us? Great. I'll just need a card for incidentals, and breakfast is from seven to ten." },
-    food: { src: '/assets/audio/lanchonete.mp3', text: "Okay, one cheeseburger combo. Would you like that for here or to go?" }
+    hotel: { src: ['/assets/audio/hotel.mp3', '/assets/audio/hotel.ogg'], text: "Hi there! Do you have a reservation with us? Great. I'll just need a card for incidentals, and breakfast is from seven to ten." },
+    food: { src: ['/assets/audio/lanchonete.mp3', '/assets/audio/lanchonete.ogg'], text: "Okay, one cheeseburger combo. Would you like that for here or to go?" }
   };
 
   var Q = {
@@ -73,18 +73,26 @@
   function play(key, rate, btn, onFail) {
     stopAudio();
     var item = AUDIO[key];
-    var a = new Audio(item.src);
-    a.preload = 'auto';
-    try { a.preservesPitch = true; a.mozPreservesPitch = true; a.webkitPreservesPitch = true; } catch (e) {}
-    a.playbackRate = rate;
-    current = a;
-    if (btn) btn.classList.add('playing');
-    a.onended = function () { if (btn) btn.classList.remove('playing'); };
+    var srcs = item.src.slice();
     var fell = false;
     function fallback() { if (fell) return; fell = true; current = null; speak(item.text, rate === 1 ? 1.05 : rate, btn, onFail); }
-    a.onerror = fallback;
-    var p = a.play();
-    if (p && p.catch) p.catch(fallback);
+    function tryNext() {
+      var src = srcs.shift();
+      if (!src) { fallback(); return; }
+      var a = new Audio(src);
+      a.preload = 'auto';
+      try { a.preservesPitch = true; a.mozPreservesPitch = true; a.webkitPreservesPitch = true; } catch (e) {}
+      a.defaultPlaybackRate = rate; a.playbackRate = rate;
+      current = a;
+      if (btn) btn.classList.add('playing');
+      a.onended = function () { if (btn) btn.classList.remove('playing'); };
+      var moved = false;
+      function next() { if (moved) return; moved = true; tryNext(); }
+      a.onerror = next;
+      var p = a.play();
+      if (p && p.catch) p.catch(function (e) { if (e && e.name === 'NotAllowedError') { fallback(); } else { next(); } });
+    }
+    tryNext();
   }
 
   // ---------- render ----------
