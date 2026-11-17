@@ -15,7 +15,7 @@ p{margin:0}
 .result-chip .note{font-size:22px;font-weight:700}
 .hero h1{margin:0;font-family:Bricolage,Inter,sans-serif;font-weight:800;font-size:clamp(46px,10vw,76px);line-height:1;letter-spacing:-1px}
 .hero .sub{font-size:clamp(18px,2.6vw,22px);line-height:1.45;max-width:720px;margin:0}
-.hero-img{width:100%;max-width:880px;margin:6px 0 0;filter:drop-shadow(0 24px 30px rgba(27,42,74,.12))}
+.hero-img{width:100%;max-width:960px;margin:6px 0 0;border-radius:18px;box-shadow:0 24px 50px rgba(27,42,74,.22)}
 .checks{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;align-items:flex-start;gap:8px;font-size:17px;text-align:left}
 @media (min-width:760px){.checks{flex-direction:row;flex-wrap:wrap;justify-content:center;gap:8px 24px}}
 .checks li{display:flex;align-items:center;gap:8px}
@@ -99,7 +99,7 @@ figcaption{font-size:14px;color:var(--ink-2);margin-top:10px;text-align:center}
 .offer-wrap{max-width:720px;margin:0 auto;padding:64px 20px}
 .offer h2{text-align:center}
 .offer-card{background:var(--paper);color:var(--ink);border-radius:22px;padding:24px;display:flex;flex-direction:column;gap:14px;align-items:center}
-.offer-card>img{width:100%;max-width:520px}
+.offer-card>img{width:100%;max-width:620px;border-radius:14px}
 .stack{list-style:none;padding:0;margin:0;width:100%}
 .stack li{display:flex;justify-content:space-between;gap:12px;font-size:16px;border-bottom:1px dashed #C9D3E6;padding:10px 0}
 .stack li span:last-child{color:var(--ink-2);white-space:nowrap;text-decoration:line-through}
