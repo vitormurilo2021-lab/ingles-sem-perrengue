@@ -8,7 +8,7 @@
 window.ISP_CONFIG = {
   PIXEL_ID: '',
   CHECKOUT_URL: '',
-  PRICE: 'R$ 37',
+  PRICE: 'R$ 19,90',
   PRICE_FROM: 'R$ 440'
 };
 
