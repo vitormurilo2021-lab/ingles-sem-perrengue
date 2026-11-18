@@ -7,7 +7,7 @@
  */
 window.ISP_CONFIG = {
   PIXEL_ID: '',
-  CHECKOUT_URL: '',
+  CHECKOUT_URL: 'https://pay.cakto.com.br/9muy2hq_1338708',
   PRICE: 'R$ 19,90',
   PRICE_FROM: 'R$ 440'
 };
