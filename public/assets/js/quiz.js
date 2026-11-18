@@ -295,7 +295,7 @@
         if (Q[id]) {
           st.a[id] = v;
           window.ispTrack('QuizStep', { step: id, answer: v }, true);
-          if (id === 'time') { go(st.i + 1); setTimeout(function () { st.history.push(st.i); st.i += 1; window.ispTrack('QuizComplete', { score: score(), dest: st.a.dest }, true); render(); }, 2700); }
+          if (id === 'time') { go(st.i + 1); setTimeout(function () { st.history.push(st.i); st.i += 1; window.ispTrack('QuizComplete', { score: score(), dest: st.a.dest }, true); window.ispTrack('Lead', { content_name: 'Teste do Ouvido' }); render(); }, 2700); }
           else next();
         } else if (id === 't1') { st.t1 = v; window.ispTrack('QuizStep', { step: 't1', correct: v === 'b' }, true); next(); }
         else if (id === 't2' && !st.t2) { st.t2 = v; window.ispTrack('QuizStep', { step: 't2', correct: v === 'b' }, true); stopAudio(); render(); }

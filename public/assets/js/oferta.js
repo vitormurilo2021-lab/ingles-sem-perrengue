@@ -29,7 +29,7 @@
     var url = checkoutUrl();
     if (url) a.href = url;
     a.addEventListener('click', function (e) {
-      window.ispTrack('InitiateCheckout', { content_name: 'Ingles Sem Perrengue', currency: 'BRL' });
+      window.ispTrack('InitiateCheckout', { content_name: 'Ingles Sem Perrengue', currency: 'BRL', value: 19.90 });
       if (!url) { e.preventDefault(); alertMissing(a); }
     });
   });
